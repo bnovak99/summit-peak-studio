@@ -7,9 +7,9 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-16">
-      <h1 className="text-4xl font-bold text-brand">Services</h1>
-      <p className="mt-4 text-muted">Coming soon.</p>
+    <section className="mx-auto max-w-6xl px-4 py-20">
+      <h1 className="text-heading font-bold text-white">Services</h1>
+      <p className="mt-4 text-mist">Coming soon.</p>
     </section>
   );
 }
