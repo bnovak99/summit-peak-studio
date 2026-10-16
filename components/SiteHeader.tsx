@@ -13,7 +13,7 @@ export default function SiteHeader() {
             src={logo}
             alt={`${siteConfig.name} home`}
             priority
-            className="h-16 w-auto md:h-20"
+            className="h-32 w-auto md:h-40"
           />
         </Link>
         <SiteNav />
