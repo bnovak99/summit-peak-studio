@@ -14,15 +14,15 @@ export default function CallToAction() {
         className="-z-10 object-cover"
         fill
       />
-      <div className="absolute inset-0 -z-10 bg-brand/90" aria-hidden="true" />
+      <div className="absolute inset-0 -z-10 bg-night/85" aria-hidden="true" />
 
-      <div className="mx-auto flex max-w-6xl flex-col items-start gap-6 px-4 py-20 md:flex-row md:items-center md:justify-between">
-        <h2 className="max-w-xl text-3xl font-bold text-white">
+      <div className="mx-auto flex max-w-6xl flex-col items-start gap-8 px-4 py-24 md:flex-row md:items-center md:justify-between">
+        <h2 className="max-w-2xl text-heading font-bold text-white">
           Ready to plan your next project?
         </h2>
         <Link
           href="/contact"
-          className="rounded-sm bg-white px-6 py-3 font-semibold text-brand hover:bg-surface"
+          className="rounded-sm bg-glow px-7 py-3.5 font-semibold text-night hover:bg-white"
         >
           Contact us
         </Link>

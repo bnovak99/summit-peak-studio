@@ -7,17 +7,38 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { navLinks } from "@/lib/site";
 
-export default function SiteNav() {
+type Tone = "light" | "dark";
+
+const toneStyles: Record<
+  Tone,
+  { button: string; panel: string; link: string; active: string }
+> = {
+  light: {
+    button: "text-ink hover:text-brand",
+    panel: "border-surface bg-white",
+    link: "text-ink hover:text-brand",
+    active: "text-brand underline underline-offset-4",
+  },
+  dark: {
+    button: "text-mist hover:text-white",
+    panel: "border-white/10 bg-night",
+    link: "text-mist hover:text-white",
+    active: "text-white underline underline-offset-4",
+  },
+};
+
+export default function SiteNav({ tone }: { tone: Tone }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const styles = toneStyles[tone];
 
   function isActive(href: string) {
     return href === "/" ? pathname === "/" : pathname.startsWith(href);
   }
 
   function linkClass(href: string) {
-    return `rounded-sm px-2 py-1 font-medium hover:text-brand ${
-      isActive(href) ? "text-brand underline underline-offset-4" : "text-ink"
+    return `rounded-sm px-2 py-1 font-medium ${
+      isActive(href) ? styles.active : styles.link
     }`;
   }
 
@@ -25,7 +46,7 @@ export default function SiteNav() {
     <nav aria-label="Main">
       <button
         type="button"
-        className="rounded-sm px-3 py-2 font-medium text-ink hover:text-brand md:hidden"
+        className={`rounded-sm px-3 py-2 font-medium md:hidden ${styles.button}`}
         aria-expanded={open}
         aria-controls="mobile-menu"
         onClick={() => setOpen((value) => !value)}
@@ -35,7 +56,7 @@ export default function SiteNav() {
 
       <ul
         id="mobile-menu"
-        className={`${open ? "flex" : "hidden"} absolute inset-x-0 top-full flex-col gap-1 border-b border-surface bg-white px-4 py-3 md:hidden`}
+        className={`${open ? "flex" : "hidden"} absolute inset-x-0 top-full flex-col gap-1 border-b px-4 py-3 md:hidden ${styles.panel}`}
       >
         {navLinks.map((link) => (
           <li key={link.href}>

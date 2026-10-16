@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 /*
- * Design tokens: the single source for colors and fonts.
- * Use them as Tailwind classes, e.g. bg-brand, text-muted, font-sans.
+ * Design tokens: the single source for colors, fonts, and type sizes.
+ * Light pages use ink, muted, surface, brand, accent.
+ * Dark homepage uses night, panel, mist, glow.
  * Contrast on white: ink 15.6:1, muted 6.4:1, brand 11.5:1, accent 5.1:1.
- * Contrast on night: mist 12.3:1.
  */
 @theme {
   --color-ink: #1a2433;
@@ -12,8 +12,16 @@
   --color-surface: #f4f6f8;
   --color-brand: #1e3a5f;
   --color-accent: #b4511f;
-  --color-night: #05090e; /* background of the dark logo, used for the footer */
+  --color-night: #05090e; /* background of the dark logo */
+  --color-panel: #0d1520;
   --color-mist: #c3ccd8;
+  --color-glow: #3cc9d1; /* teal from the logo */
+
+  /* Fluid type: scales with the viewport between phone and wide screen */
+  --text-display: clamp(2.75rem, 1.6rem + 4.8vw, 6rem);
+  --text-display--line-height: 1.02;
+  --text-heading: clamp(2.25rem, 1.5rem + 3vw, 4rem);
+  --text-heading--line-height: 1.1;
 }
 
 @theme inline {

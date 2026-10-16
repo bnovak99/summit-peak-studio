@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import SiteFooter from "@/components/SiteFooter";
-import SiteHeader from "@/components/SiteHeader";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -24,6 +22,7 @@ export const metadata: Metadata = {
   description: siteConfig.description,
 };
 
+// Shared HTML shell only. Each route group adds its own header, main, and footer.
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -37,11 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Skip to content
         </a>
-        <SiteHeader />
-        <main id="main-content" className="flex-1">
-          {children}
-        </main>
-        <SiteFooter />
+        {children}
       </body>
     </html>
   );
