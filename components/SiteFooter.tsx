@@ -1,13 +1,19 @@
+import Image from "next/image";
 import Link from "next/link";
 import { navLinks, siteConfig } from "@/lib/site";
+import logo from "@/public/SummitPeakStudioLogo-02.webp";
 
 export default function SiteFooter() {
   return (
-    <footer className="border-t border-surface bg-surface">
+    <footer className="bg-night text-mist">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-3">
         <div>
-          <p className="text-lg font-bold text-brand">{siteConfig.name}</p>
-          <p className="mt-2 text-sm text-muted">{siteConfig.description}</p>
+          <Image
+            src={logo}
+            alt={siteConfig.name}
+            className="h-auto w-44"
+          />
+          <p className="mt-4 text-sm">{siteConfig.description}</p>
         </div>
 
         <nav aria-label="Footer">
@@ -16,7 +22,7 @@ export default function SiteFooter() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="rounded-sm text-ink hover:text-brand"
+                  className="rounded-sm text-mist hover:text-white"
                 >
                   {link.label}
                 </Link>
@@ -25,12 +31,12 @@ export default function SiteFooter() {
           </ul>
         </nav>
 
-        <div className="text-sm text-muted">
+        <div className="text-sm">
           <p>
             Email{" "}
             <a
               href={`mailto:${siteConfig.email}`}
-              className="rounded-sm text-ink underline underline-offset-4 hover:text-brand"
+              className="rounded-sm text-white underline underline-offset-4 hover:text-mist"
             >
               {siteConfig.email}
             </a>

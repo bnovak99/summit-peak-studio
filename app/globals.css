@@ -4,6 +4,7 @@
  * Design tokens: the single source for colors and fonts.
  * Use them as Tailwind classes, e.g. bg-brand, text-muted, font-sans.
  * Contrast on white: ink 15.6:1, muted 6.4:1, brand 11.5:1, accent 5.1:1.
+ * Contrast on night: mist 12.3:1.
  */
 @theme {
   --color-ink: #1a2433;
@@ -11,6 +12,8 @@
   --color-surface: #f4f6f8;
   --color-brand: #1e3a5f;
   --color-accent: #b4511f;
+  --color-night: #05090e; /* background of the dark logo, used for the footer */
+  --color-mist: #c3ccd8;
 }
 
 @theme inline {
