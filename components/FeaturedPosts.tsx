@@ -19,7 +19,7 @@ export default function FeaturedPosts() {
           All posts
         </Link>
       </div>
-      <ul className="mt-10 grid gap-6 md:grid-cols-3">
+      <ul className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
         {placeholderPosts.map((post) => (
           <li key={post.title} className="flex flex-col rounded-lg border border-surface p-6">
             <h3 className="text-xl font-semibold text-ink">{post.title}</h3>

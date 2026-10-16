@@ -4,7 +4,7 @@ import heroImage from "@/public/peak.webp";
 
 export default function Hero() {
   return (
-    <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-2 md:py-24">
+    <section className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 py-16 md:grid-cols-2 md:py-24">
       <div>
         <h1 className="text-4xl font-bold leading-tight text-brand md:text-5xl">
           Digital work built on solid ground.

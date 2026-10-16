@@ -6,7 +6,7 @@ import logo from "@/public/SummitPeakStudioLogo-02.webp";
 export default function SiteFooter() {
   return (
     <footer className="bg-night text-mist">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-10 md:grid-cols-3">
         <div>
           <Image
             src={logo}
